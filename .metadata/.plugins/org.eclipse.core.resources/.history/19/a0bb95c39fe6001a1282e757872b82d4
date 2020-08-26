@@ -1,0 +1,11 @@
+spring.jpa.show-sql=true
+spring.h2.console.settings.web-allow-others=true
+spring.h2.console.enabled=true
+spring.h2.console.path=/h2console
+spring.datasource.username=sa
+spring.datasource.password=
+
+jwt.secret = JWT_Sekret_Key
+jwt.tokenValidityInMinutes = 60
+jwt.remeberMeForMinutes = 240
+server.port=9000

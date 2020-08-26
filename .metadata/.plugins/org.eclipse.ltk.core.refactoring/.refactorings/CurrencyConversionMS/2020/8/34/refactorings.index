@@ -1,0 +1,12 @@
+1597850767236	Rename type 'CurrencyExchangeServiceController'
+1597851255281	Rename type 'ConversionExchangeDTO'
+1597851326071	Rename type 'ConversionFactorEntity'
+1597851926073	Rename type 'ConversionExchangeStatusException'
+1597851962918	Rename type 'ConversionfactorStatusExceptionController'
+1597851990730	Rename type 'ConversionFactorRequestModel'
+1597852012468	Rename type 'ConversionFactorResponseModel'
+1597852044880	Rename type 'ConversionFactorRepository'
+1597852097881	Delete element
+1597852126011	Rename type 'ConversionExchangeServiceProxy'
+1597852152894	Rename type 'ConversionExchangservice'
+1597852188510	Rename type 'ConversionFactorServiceImpl'

@@ -1,0 +1,16 @@
+package com.ibm.jwtservice.dto;
+
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class StoreDTO  implements EntityConverter<Store> {
+	protected String storeName;
+	protected String address;
+	protected boolean active;
+	
+	@Override
+	public Store getEntity(int id) {
+		return new Store(id, this.storeName, this.address, this.active);
+	}
+}

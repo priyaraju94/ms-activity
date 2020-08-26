@@ -1,0 +1,52 @@
+package com.ibm.currencyconversion.service;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.ibm.currencyconversion.dto.CurrencyConversionDTO;
+import com.ibm.currencyconversion.entity.CurrencyConversionEntity;
+import com.ibm.currencyconversion.repository.CurrencyConversionRepository;
+
+
+@Service
+public class CurrencyConversionServiceImpl implements CurrencyConversionService {
+	
+	@Autowired
+	CurrencyConversionRepository  repo;
+	
+	@Autowired
+	public CurrencyConversionServiceImpl(CurrencyConversionRepository repo) {
+		
+		this.repo = repo;
+	}
+
+
+
+	@Override
+	public CurrencyConversionDTO getCurrencyBycountrycode(String countrycode, double amount) {
+		// TODO Auto-generated method stub
+		CurrencyConversionEntity entity = repo.findBycountryCode(countrycode);     
+        //if(userEntity == null) throw new UsernameNotFoundException("User not found");
+       
+		CurrencyConversionDTO dto = new ModelMapper().map(entity, CurrencyConversionDTO.class);
+		System.out.println(entity.getCountryfactor());
+        System.out.println(entity.getCountryfactor()*amount);
+		 dto.setConversionamount(entity.getCountryfactor()*amount);
+		return dto;
+	}
+	
+	@Override
+	public CurrencyConversionDTO getCurrencyBycountrycodeFeign(double factor , double amount) {
+		// TODO Auto-generated method stub
+		//ConversionFactorEntity entity = repo.findBycountryCode(countrycode);     
+        //if(userEntity == null) throw new UsernameNotFoundException("User not found");
+       
+		CurrencyConversionDTO dto = new CurrencyConversionDTO();
+        
+		 dto.setConversionamount(factor*amount);
+		return dto;
+	}
+	}
+	
+

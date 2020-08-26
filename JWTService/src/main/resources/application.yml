@@ -1,0 +1,18 @@
+jwt:
+  remeberMeForMinutes: 240
+  secret: JWT_Sekret_Key
+  tokenValidityInMinutes: 60
+server:
+  port: 9000
+spring:
+  datasource:
+    password: ''
+    username: sa
+  h2:
+    console:
+      enabled: true
+      path: /h2console
+      settings:
+        web-allow-others: true
+  jpa:
+    show-sql: true
